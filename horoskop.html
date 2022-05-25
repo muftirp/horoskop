@@ -1,0 +1,48 @@
+
+
+<html>
+    <head> </head>
+  <body>
+    <h1>PROGRAM HOROSKOP</h1>
+    <button>Click Here!</button>
+
+    <p>Keberuntungan Anda Hari ini:</p>
+    
+    <hr color="black">
+          <!--hasil horoskop-->
+          <div id="demo"></div>
+          
+    <script>
+      //mengambil button dan membuatnya menjadi sebuah variabel btn  
+      const btn = document.querySelector("button");
+      btn.addEventListener('click',function() {
+        //mengambil id "demo" dan membuatnya menjadi sebuah variabel divDemo  
+        const divDemo = document.getElementById("demo");
+        // membuat sebuah element "p"
+        const paragraf = document.createElement("p");
+
+        //deklarasi randomNumber
+        const randomNumber = Date.now() % 5;
+        switch (randomNumber) {
+            case 0:
+                  paragraf.innerHTML = 'Hebat!!';
+                  break;
+            case 1:
+                  paragraf.innerHTML = 'Boleh juga!';
+                  break;
+            case 2:
+                  paragraf.innerHTML = 'Mengerikan...';
+                  break;
+            case 3:
+                  paragraf.innerHTML = 'Coba lagi...';
+                  break;
+            default:
+                  paragraf.innerHTML = 'Mantap...';
+                  break;
+        }
+        // menambahkan element "p" kedalam element "div"
+        divDemo.append(paragraf);
+    });
+    </script>
+  </body>
+</html>
